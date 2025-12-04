@@ -1,0 +1,86 @@
+.smart-agent-container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.error-container {
+  text-align: center;
+  padding: 20px;
+  color: #ff4d4f;
+}
+
+.empty-container {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.h-\[100px\] {
+  height: 100px;
+}
+
+.text-slate-600 {
+  color: #475569;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.text-\[12px\] {
+  font-size: 12px;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.max-w-\[calc\(100\%-20px\)\] {
+  max-width: calc(100% - 20px);
+}
+
+@media (min-width: 640px) {
+  .sm\:max-w-\[300px\] {
+    max-width: 300px;
+  }
+}

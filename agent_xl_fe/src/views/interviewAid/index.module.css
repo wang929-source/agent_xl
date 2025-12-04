@@ -1,0 +1,30 @@
+:where(.css-dev-only-do-not-override-7t2xvq).ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: rgba(0,0,0,0.88);
+}
+
+.logo {
+    height: 3em;
+    margin: .5em;
+    will-change: filter;
+    transition: filter 300ms;
+    border-radius: 8px;
+}
+
+.item {
+    /* min-height: 40px; */
+    line-height: 28px;
+    max-width: 100%;
+    width: fit-content;
+    text-align: left;
+    word-break: break-all;
+    padding: 6px 16px;
+    margin-bottom: 24px;
+    &.right {
+        align-self: flex-end;
+        max-width: 72%;
+        background-color: #edf6ff;
+        border-radius: 12px;
+    }
+}
+
+  
