@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # 后端服务
+  backend:
+    build: ./agent_xl_server
+    container_name: agent_xl_backend
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - DB_HOST=database
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=Yge_123456
+      - DB_NAME=agent_xl_fe
+      - UPLOAD_DIR=/data/agent_xl_server/uploads
+    depends_on:
+      - database
+    volumes:
+      - ./agent_xl_server/src/img:/data/agent_xl_server/uploads
+    restart: unless-stopped
+
+  # 前端服务
+  frontend:
+    build: ./agent_xl_fe
+    container_name: agent_xl_frontend
+    ports:
+      - "8086:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # MySQL数据库服务
+  database:
+    image: mysql:8.0
+    container_name: agent_xl_database
+    ports:
+      - "3308:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=Yge_123456
+      - MYSQL_DATABASE=agent_xl_fe
+      - MYSQL_CHARSET=utf8mb4
+      - MYSQL_COLLATION=utf8mb4_unicode_ci
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+    driver: local
